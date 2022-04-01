@@ -1,11 +1,22 @@
-import React, { Component } from 'react';
-import './App.css';
-import MyForm from './form';
-import Greet from './components/Greet';
-import Welcome from './components/Welcome';
-import Hello from './components/Hello';
-import Message from './components/Message';
-import Counter from './components/Counter';
+// import React, { Component, useContext,  useEffect } from 'react';
+// import React, { useState } from "react";
+// import ReactDOM from "react-dom";
+// import './App.css';
+// import MyForm from './form';
+// import Greet from './components/Greet';
+// import Welcome from './components/Welcome';
+// import Hello from './components/Hello';
+// import Hooks from './components/Hooks';
+// import Login from './Login'
+
+// import React from 'react';
+// import './App.css';
+// import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
+// import Login from './components/Login';
+// import SignUp from './components/SignUp';
+
+
 
 // const  App = () => {
 //   return (
@@ -18,10 +29,7 @@ import Counter from './components/Counter';
   //   </div>
   //   <h1 className="greeting">
   //   Hello, world!
-  // </h1>
-
-  
-        
+  // </h1> 
   //     </header>
   //   </div>
 //   );
@@ -50,12 +58,10 @@ import Counter from './components/Counter';
 //   <MyForm name={"First Name"} lastName={"skjbfeklfndsdgnwdln"} submitName={'Please submit'}/> 
 //     </header>
 //     </div>
-//     </div>
-    
-
-    
+//     </div>    
 //   );
 // }
+
 
 // const FancyBorder = (props) => {
 //   return (
@@ -77,21 +83,44 @@ import Counter from './components/Counter';
 //   );
 // }
 
-class App extends Component {
-  render() {
-    return (
-      <div className='App'>
+// const App = () => {
+//     return (
+//     <Router>
+//       <div className='App'>
      
-        {/* <Greet name="yash"/>
-        <Greet name="nikhil"/>
-         <Greet name="nirav"/> 
-        <Welcome />
-        <Message /> */}
-       <Counter />
-       
-      </div>
-    );
-  }
-}
+//         {/* <Greet name="yash"/>
+//         <Greet name="nikhil"/>
+//          <Greet name="nirav"/> 
+//         <Welcome /> */}
+//      {/* <Hooks />   */}
+//      {/* <Login /> */}
+     
+//      <Route exact path='/' component={Login} />
+//             <Route path="/sign-in" component={Login} />
+//             <Route path="/sign-up" component={SignUp} />
+//       </div>
+//       </Router>
+//     );
+  
+// }
 
+//  export default App
+
+ 
+ import React, { Suspense, lazy } from 'react';
+ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+ 
+ const Login = lazy(() => import('./components/Login'));
+ const SignUp = lazy(() => import('./components/SignUp'));
+ 
+ const App = () => (
+   <Router>
+     <Suspense fallback={<div>Loading...</div>}>
+       <Routes>
+         <Route path="/" element={<SignUp />} />
+         <Route path="/" element={<Login />} />
+       </Routes>
+     </Suspense>
+   </Router>
+ )
 export default App

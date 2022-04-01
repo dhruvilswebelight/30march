@@ -87,82 +87,6 @@
 //             };
         
 
-                 // usecontext hook
-
-// const themes = {
-//     light: {
-//       foreground: "#000000",
-//       background: "#eeeeee"
-//     },
-//     dark: {
-//       foreground: "#ffffff",
-//       background: "#222222"
-//     }
-//   };
-  
-//   const ThemeContext = React.createContext(themes.light);
-  
-//   const App = () => {
-//     return (
-//       <ThemeContext.Provider value={themes.dark}>
-//         <Toolbar />
-//       </ThemeContext.Provider>
-//     );
-//   }
-  
-//   const Toolbar = (props) => {
-//     return (
-//       <div>
-//         <ThemedButton />
-//       </div>
-//     );
-//   }
-  
-//   const ThemedButton = () => {
-//     const theme = useContext(ThemeContext);
-//     return (
-//       <button style={{ background: theme.background, color: theme.foreground }}>
-//         I am styled by theme context!
-//       </button>
-//     );
-//   }
-
-                    //    useContext, useMemo
-
-// const UserContext = createContext({
-//     userName: '',
-//     setUserName: () => {},
-//   });
-//   const App = () => {
-//     const [userName, setUserName] = useState('dhruvil suhagiya');
-//     const value = useMemo(
-//       () => ({ userName, setUserName }), 
-//       [userName]
-//     );
-    
-//     return (
-//       <UserContext.Provider value={value}>
-//         <UserNameInput />
-//         <UserInfo />
-//       </UserContext.Provider>
-//     );
-//   }
-//   const UserNameInput = () => {
-//     const { userName, setUserName } = useContext(UserContext);
-//     const changeHandler = event => setUserName(event.target.value);
-//     return (
-//       <input
-//         type="text"
-//         value={userName}
-//         onChange={changeHandler}
-//       />
-//     );
-//   }
-//   const UserInfo =() =>{
-//     const { userName } = useContext(UserContext);
-//     return <span>{userName}</span>;
-//   }
-
                         // useReducer hook
 
 // const initialState = 0;
@@ -198,10 +122,9 @@
                         // useCallback hook
 
 // import React, { useState, useCallback } from 'react'
-// var funccount = new Set();
+// let funccount = new Set();
+
 // const App = () => {
-
-
 // const [count, setCount] = useState(0)
 // const [number, setNumber] = useState(0)
 
@@ -218,7 +141,6 @@
 // funccount.add(incrementCounter);
 // funccount.add(decrementCounter);
 // funccount.add(incrementNumber);
-// alert(funccount.size);
 
 // return (
 // 	<div>
@@ -270,32 +192,32 @@
 
                              // useRef hook - focus,color,value, DOM manipulation handle with useRef
 
-import React, { useRef } from "react";
+// import React, { useRef } from "react";
 
-const App = () => 
-{
+// const App = () => 
+// {
     
-     let inputRef = useRef(null)
-      const handleInput = () => 
-                {
-                    console.warn("function call")
-                    inputRef.current.value = 1000;
-                    inputRef.current.focus();
-                    inputRef.current.style.color = "red"
-                    // inputRef.current.style.display = "none"
-                }
+//      let inputRef = useRef(null)
+//       const handleInput = () => 
+//                 {
+//                     console.warn("function call")
+//                     inputRef.current.value = 1000;
+//                     inputRef.current.focus();
+//                     inputRef.current.style.color = "red"
+//                     // inputRef.current.style.display = "none"
+//                 }
     
 
-    return(
-            <div className="App">
-                <h1>useRef in React</h1>
-                <input type = "text" ref={inputRef}/>
-                <button onClick={handleInput}>Handle Input</button>
-            </div>
-          );
-}
+//     return(
+//             <div className="App">
+//                 <h1>useRef in React</h1>
+//                 <input type = "text" ref={inputRef}/>
+//                 <button onClick={handleInput}>Handle Input</button>
+//             </div>
+//           );
+// }
 
-export default App
+// export default App
 
                                 // Custom Hook
 
@@ -319,3 +241,33 @@ export default App
 // }
 
 // export default App;
+
+
+                                  // context api with useContext Hook
+
+   import React, {createContext, useState} from "react";
+   import Child from "./Child";
+   import SecondChild from "./SecondChild";
+
+   export const GlobalInfo = createContext();
+
+const App = () => {
+const [color, setColor] = useState('red');
+const [day, setDay] = useState("Monday");
+
+const getDay = (item) => {
+    console.warn(item) 
+    setDay(item)   
+}
+
+    return (
+        <GlobalInfo.Provider value={{ appColor:color,getDay:getDay }}>
+   <div>
+       <h1>App Component {day}</h1>
+       <Child />
+       <SecondChild />
+   </div>
+   </GlobalInfo.Provider>
+    )
+}
+export default App                               
