@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
  const Login = () => {
-     {
+     
         return (
             <form>
 
-                <h3>Log in</h3>
+                <h1>Log in</h1>
 
                 <div className="form-group">
                     <label>Email</label>
@@ -24,5 +24,5 @@ import React, { Component } from "react";
             </form>
         );
     }
-}
+
 export default Login

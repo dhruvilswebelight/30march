@@ -9,9 +9,14 @@ const useCustomCounter = () =>
     {
         setCount(count + 1);
     };
+    const handleDecrement = () => 
+    {
+        setCount(count - 1);
+    };
     return{
         count,
-        handleIncrement
+        handleIncrement,
+        handleDecrement
     };
 }
 export default useCustomCounter;

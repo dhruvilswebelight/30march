@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-const SignUp = () =>{
-     {
+const SignUp = () => {
+     
         return (
             <form>
-                <h3>Register</h3>
+                <h1>Register</h1>
 
                 <div className="form-group">
                     <label>First name</label>
@@ -32,7 +32,7 @@ const SignUp = () =>{
                 </p>
             </form>
         );
-    }
+    
 }
 
 export default SignUp

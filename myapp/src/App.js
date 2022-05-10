@@ -1,16 +1,16 @@
 // import React, { Component, useContext,  useEffect } from 'react';
 // import React, { useState } from "react";
-// import ReactDOM from "react-dom";
-// import './App.css';
+import ReactDOM from "react-dom";
+import './App.css';
 // import MyForm from './form';
 // import Greet from './components/Greet';
 // import Welcome from './components/Welcome';
 // import Hello from './components/Hello';
-// import Hooks from './components/Hooks';
+import Hooks from './components/Hooks';
 // import Login from './Login'
 
-// import React from 'react';
-// import './App.css';
+import React from 'react';
+import './App.css';
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 // import Login from './components/Login';
@@ -83,44 +83,101 @@
 //   );
 // }
 
-// const App = () => {
-//     return (
-//     <Router>
-//       <div className='App'>
+const App = () => {
+    return (
+    // <Router>
+      <div className='App'>
      
-//         {/* <Greet name="yash"/>
-//         <Greet name="nikhil"/>
-//          <Greet name="nirav"/> 
-//         <Welcome /> */}
-//      {/* <Hooks />   */}
-//      {/* <Login /> */}
+         {/* <Greet name="yash"/>
+        <Greet name="nikhil"/>
+         <Greet name="nirav"/> 
+        <Welcome />  */}
+     <Hooks />  
+     {/* <Login /> */}
      
-//      <Route exact path='/' component={Login} />
-//             <Route path="/sign-in" component={Login} />
-//             <Route path="/sign-up" component={SignUp} />
-//       </div>
-//       </Router>
-//     );
+     {/* <Route exact path='/' component={Login} />
+            <Route path="/sign-in" component={Login} />
+            <Route path="/sign-up" component={SignUp} /> */}
+      </div>
+      // </Router>
+    );
   
+}
+
+ export default App
+
+ 
+//  import React, { Suspense, lazy } from 'react';
+//  import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+ 
+// import Login from './components/Login'
+// import SignUp from './components/SignUp'
+
+// //  const Login = lazy(() => import('./components/Login'));
+// //  const SignUp = lazy(() => import('./components/SignUp'));
+ 
+//  const App = () => (
+//    <Router>
+//      <Suspense fallback={<div>Loading...</div>}>
+//        <Routes>
+//          <Route path="/" element={<SignUp />} />
+//          <Route path="/Login" element={<Login />} />
+//        </Routes>
+//      </Suspense>
+//    </Router>
+
+
+//   // <Login/>
+//   // <SignUp/>
+//  )
+// export default App
+
+// import React, { Component } from 'react';
+// import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+// // import SignUp from './component/SignUp';
+// // import Login from './component/Login';
+// import SignUp from './components/SignUp'
+// import Login from './components/Login'
+
+// import './App.css';
+
+// const App = () => {
+
+// 	return (
+//           <Router>
+//             <div className="App">
+//               <ul className="App-header">
+//               <li>
+//                 <Link to="/">SignUp</Link>
+//               </li>
+//               <li>
+//                 <Link to="/Login">Login</Link>
+//               </li>
+            
+//               </ul>
+//             <Routes>
+//                 <Route exact path='/' element={< SignUp />}></Route>
+//                 <Route exact path='/Login' element={< Login />}></Route>
+            
+//             </Routes>
+//             </div>
+//           </Router>
+
+
+//   )
+//   }
+
+
+// import './App.css';
+// import Form from "./Form"
+
+// const App = () => {
+// return (
+// <div className="App">
+// <Form />
+// </div>
+
+// );
 // }
 
-//  export default App
-
- 
- import React, { Suspense, lazy } from 'react';
- import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
- 
- const Login = lazy(() => import('./components/Login'));
- const SignUp = lazy(() => import('./components/SignUp'));
- 
- const App = () => (
-   <Router>
-     <Suspense fallback={<div>Loading...</div>}>
-       <Routes>
-         <Route path="/" element={<SignUp />} />
-         <Route path="/" element={<Login />} />
-       </Routes>
-     </Suspense>
-   </Router>
- )
-export default App
+// export default App;

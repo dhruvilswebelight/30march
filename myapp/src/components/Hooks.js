@@ -221,53 +221,49 @@
 
                                 // Custom Hook
 
-// import React from "react";
-// import useCustomCounter from "./Custom";
+import React from "react";
+import useCustomCounter from "./Custom";
 
-// const App = () => {
-//     const data = useCustomCounter();
-//     const data1 = useCustomCounter();
+const App = () => {
+    const data = useCustomCounter();
 
-//     return(
-//         <React.Fragment>
-//             <h1>Count up: {data.count}</h1>
-//             <button type="button" onClick={data.handleIncrement}>Increment</button>
+    return(
+        <div>
+            <h1>Count :-  {data.count}</h1>
+            <button type="button" onClick={data.handleIncrement}>Increment</button>
+            <button type="button" onClick={data.handleDecrement}>Decrement</button>
+        </div>     
+    )
+}
 
-//             <h1>Count up: {data1.count}</h1>
-//             <button type="button" onClick={data1.handleIncrement}>Increment</button>
-            
-//         </React.Fragment>
-//     )
-// }
-
-// export default App;
+export default App;
 
 
                                   // context api with useContext Hook
 
-   import React, {createContext, useState} from "react";
-   import Child from "./Child";
-   import SecondChild from "./SecondChild";
+//    import React, {createContext, useState} from "react";
+//    import Child from "./Child";
+//    import SecondChild from "./SecondChild";
 
-   export const GlobalInfo = createContext();
+//    export const GlobalInfo = createContext();
 
-const App = () => {
-const [color, setColor] = useState('red');
-const [day, setDay] = useState("Monday");
+// const App = () => {
+// const [color, setColor] = useState('red');
+// const [day, setDay] = useState("Monday");
 
-const getDay = (item) => {
-    console.warn(item) 
-    setDay(item)   
-}
+// const getDay = (item) => {
+//     console.warn(item) 
+//     setDay(item)   
+// }
 
-    return (
-        <GlobalInfo.Provider value={{ appColor:color,getDay:getDay }}>
-   <div>
-       <h1>App Component {day}</h1>
-       <Child />
-       <SecondChild />
-   </div>
-   </GlobalInfo.Provider>
-    )
-}
-export default App                               
+//     return (
+//         <GlobalInfo.Provider value={{ appColor:color,getDay:getDay }}>
+//    <div>
+//        <h1>App Component {day}</h1>
+//        <Child />
+//        <SecondChild />
+//    </div>
+//    </GlobalInfo.Provider>
+//     )
+// }
+// export default App                               
